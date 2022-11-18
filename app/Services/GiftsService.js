@@ -26,7 +26,7 @@ class GiftsService {
   async createGift(giftData) {
     const res = await GiftApi.post('https://bcw-sandbox.herokuapp.com/api/gifts', giftData)
     console.log('[POST GIFT]', res.data)
-    appState.gifts = [...appState.gifts, new Gift(res.data)]
+    appState.gifts = [new Gift(res.data), ...appState.gifts]
   }
 }
 
